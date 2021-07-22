@@ -28,9 +28,9 @@ namespace TaskManagementAPI
             {
                 list = new List<Item>
                 {
-                 new Appointment("TEST", "TEST", DateTimeOffset.Now, DateTimeOffset.Now, new List<string>(), true, true),
-                 new Appointment("TEST", "TEST", DateTimeOffset.Now, DateTimeOffset.Now, new List<string>(), false, false),
-                 new Appointment("TEST", "TEST", DateTimeOffset.Now, DateTimeOffset.Now, new List<string>(), false, false),
+                 new Appointment("TEST23", "TEST", DateTimeOffset.Now, DateTimeOffset.Now, new List<string>(), true, true),
+                 new Appointment("TEST23", "TEST", DateTimeOffset.Now, DateTimeOffset.Now, new List<string>(), false, false),
+                 new Appointment("TEST23", "TEST", DateTimeOffset.Now, DateTimeOffset.Now, new List<string>(), false, false),
                  new Library.TaskManagement.Task ("test22", "teshht2", DateTimeOffset.Now),
                 }
             }
