@@ -44,7 +44,7 @@ namespace TaskManagementAPI
                 app.UseDeveloperExceptionPage();
             }
 
-            context.Database.EnsureCreated();
+            context.Database.Migrate();
 
             app.UseHttpsRedirection();
 
