@@ -1,9 +1,9 @@
-C:\Users\trevo\source\repos\TaskManagementAPI\Library.4930.TaskManagement\obj\Debug\netstandard2.0\Library.TaskManagement.csprojAssemblyReference.cache
-C:\Users\trevo\source\repos\TaskManagementAPI\Library.4930.TaskManagement\obj\Debug\netstandard2.0\Library.TaskManagement.AssemblyInfoInputs.cache
-C:\Users\trevo\source\repos\TaskManagementAPI\Library.4930.TaskManagement\obj\Debug\netstandard2.0\Library.TaskManagement.AssemblyInfo.cs
 C:\Users\trevo\source\repos\TaskManagementAPI\Library.4930.TaskManagement\bin\Debug\netstandard2.0\Library.TaskManagement.deps.json
 C:\Users\trevo\source\repos\TaskManagementAPI\Library.4930.TaskManagement\bin\Debug\netstandard2.0\Library.TaskManagement.dll
 C:\Users\trevo\source\repos\TaskManagementAPI\Library.4930.TaskManagement\bin\Debug\netstandard2.0\Library.TaskManagement.pdb
+C:\Users\trevo\source\repos\TaskManagementAPI\Library.4930.TaskManagement\obj\Debug\netstandard2.0\Library.TaskManagement.csprojAssemblyReference.cache
+C:\Users\trevo\source\repos\TaskManagementAPI\Library.4930.TaskManagement\obj\Debug\netstandard2.0\Library.TaskManagement.AssemblyInfoInputs.cache
+C:\Users\trevo\source\repos\TaskManagementAPI\Library.4930.TaskManagement\obj\Debug\netstandard2.0\Library.TaskManagement.AssemblyInfo.cs
+C:\Users\trevo\source\repos\TaskManagementAPI\Library.4930.TaskManagement\obj\Debug\netstandard2.0\Library.TaskManagement.csproj.CoreCompileInputs.cache
 C:\Users\trevo\source\repos\TaskManagementAPI\Library.4930.TaskManagement\obj\Debug\netstandard2.0\Library.TaskManagement.dll
 C:\Users\trevo\source\repos\TaskManagementAPI\Library.4930.TaskManagement\obj\Debug\netstandard2.0\Library.TaskManagement.pdb
-C:\Users\trevo\source\repos\TaskManagementAPI\Library.4930.TaskManagement\obj\Debug\netstandard2.0\Library.TaskManagement.csproj.CoreCompileInputs.cache

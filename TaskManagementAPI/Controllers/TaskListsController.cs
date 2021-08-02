@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Library.TaskManagement;
 using Newtonsoft.Json;
+using TaskManagementAPI.Controllers.Enterprise;
+using Library.TaskManagement.TaskManagementDB;
+using TaskManagementAPI.Persistence;
 
 namespace TaskManagementAPI.Controllers
 {
@@ -13,6 +16,12 @@ namespace TaskManagementAPI.Controllers
     [Route("TaskLists")]
     public class TaskListsController : ControllerBase
     {
+        private readonly TMContext db;
+        public TaskListsController(TMContext context)
+        {
+            db = context;
+        }
+
         [HttpGet("test")]
         public string Test()
         {
@@ -20,18 +29,15 @@ namespace TaskManagementAPI.Controllers
         }
 
         [HttpGet("AllListIDs")]
-        public ActionResult<Dictionary<string, Guid>> GetGuids()
+        public async Task<ActionResult<Dictionary<string, Guid>>> GetGuids()
         {
-            //return Ok(DataContext.Lists.Select(list => list.id).ToDictionary(list => list.name));
-            return Ok(DataContext.Lists.ToDictionary(list => list.name, list => list.Id));
-
+            return Ok(await new TaskListsEC(db).GetListIds());
         }
 
         [HttpGet("{id}")]
-        public ActionResult<List<Item>> GetList(Guid id)
+        public async Task<ActionResult<List<Item>>> GetList(Guid id)
         {
-            var namedlist = new NamedList<Item>(DataContext.Lists.FirstOrDefault(list => list.Id.Equals(id)));
-            namedlist.list = namedlist.list.OrderByDescending(item => item.Priority.Equals(true)).ToList();
+            var namedlist = await new TaskListsEC(db).GetList(id, true);
             var json = JsonConvert.SerializeObject(namedlist, new JsonSerializerSettings
             {
                 TypeNameHandling = TypeNameHandling.Auto
@@ -40,10 +46,9 @@ namespace TaskManagementAPI.Controllers
         }
 
         [HttpGet("{id}/Incomplete")]
-        public ActionResult<List<Item>> GetListIncomplete(Guid id)
+        public async Task<ActionResult<List<Item>>> GetListIncomplete(Guid id)
         {
-            var namedlist = new NamedList<Item>(DataContext.Lists.FirstOrDefault(list => list.Id.Equals(id)));
-            namedlist.list = namedlist.list.Where(item => item.IsCompleted.Equals(false)).OrderByDescending(item => item.Priority.Equals(true)).ToList();
+            var namedlist = await new TaskListsEC(db).GetList(id, false);
             var json = JsonConvert.SerializeObject(namedlist, new JsonSerializerSettings
             {
                 TypeNameHandling = TypeNameHandling.Auto
@@ -52,118 +57,80 @@ namespace TaskManagementAPI.Controllers
         }
 
         [HttpPost("AddList")]
-        public ActionResult<NamedList<Item>> AddList([FromBody] string name)
+        public async Task<ActionResult<NamedListDB>> AddList([FromBody] string name)
         {
             var newList = new NamedList<Item>(name);
-            DataContext.Lists.Add(newList);
-            return Ok(newList);
+            return Ok(await new TaskListsEC(db).AddList(newList));
         }
 
         [HttpPost("DeleteList")]
-        public ActionResult<NamedList<Item>> DeleteList([FromBody] Guid id)
+        public async Task<ActionResult<NamedList<Item>>> DeleteList([FromBody] Guid id)
         {
-            var listToRemove = DataContext.Lists.FirstOrDefault(List => List.Id.Equals(id));
+            if (id == null)
+            {
+                return BadRequest();
+            }
+            var listToRemove = db.TaskLists.FirstOrDefault(n => n.Id.Equals(id));
             if (listToRemove?.Id != Guid.Empty)
             {
-                DataContext.Lists.Remove(listToRemove);
+                //DataContext.Lists.Remove(listToRemove);
+                await new TaskListsEC(db).DeleteList(id);
             }
 
             return Ok(listToRemove);
         }
 
         [HttpPost("{Id?}/AddOrUpdateTask")]
-        public ActionResult<Library.TaskManagement.Task> AddOrUpdateTask(Guid Id, [FromBody]Library.TaskManagement.Task task)
+        public async Task<ActionResult<Library.TaskManagement.Task>> AddOrUpdateTask(Guid Id, [FromBody]Library.TaskManagement.Task task)
         {
-            var ListToAdd = DataContext.Lists.FirstOrDefault(List => List.Id.Equals(Id));
-            Library.TaskManagement.Task newTask = null;
-            if (task == null)
+            if (task == null || Id == null)
             {
                 return BadRequest();
             }
-            
-            if (task.Id == Guid.Empty)
-            {
-                newTask = new Library.TaskManagement.Task(task.Name, task.Description, task.DeadlineDate, task.IsCompleted, task.Priority);
-                ListToAdd.list.Add(newTask);
-            }
-            else
-            {
-                newTask = (Library.TaskManagement.Task) ListToAdd.list.FirstOrDefault(t => t.Id.Equals(task.Id));
-                var index = ListToAdd.list.IndexOf(newTask);
-                ListToAdd.list.RemoveAt(index);
-                ListToAdd.list.Insert(index, task);
-            }
+            var oldTask = await new TaskListsEC(db).AddOrUpdateTask(Id, task);
 
-            return Ok(new Library.TaskManagement.Task());
+            return Ok(oldTask);
 
         }
 
         [HttpPost("{Id?}/AddOrUpdateAppointment")]
-        public ActionResult<Appointment> AddOrUpdateAppointment(Guid Id, [FromBody] Appointment appt)
+        public async Task<ActionResult<Appointment>> AddOrUpdateAppointment(Guid Id, [FromBody] Appointment appt)
         {
-
-            var ListToAdd = DataContext.Lists.FirstOrDefault(List => List.Id.Equals(Id));
-            Appointment newAppointment = null;
             if (appt == null)
             {
                 return BadRequest();
             }
+            var oldAppt = await new TaskListsEC(db).AddOrUpdateAppointment(Id, appt);
 
-            if (appt.Id == Guid.Empty)
-            {
-                newAppointment = new Appointment(appt.Name, appt.Description, appt.StartTime, appt.EndTime, appt.Atendees, appt.IsCompleted, appt.Priority);
-                ListToAdd.list.Add(newAppointment);
-            }
-            else
-            {
-                newAppointment = (Appointment)ListToAdd.list.FirstOrDefault(t => t.Id.Equals(appt.Id));
-                var index = ListToAdd.list.IndexOf(newAppointment);
-                ListToAdd.list.RemoveAt(index);
-                ListToAdd.list.Insert(index, appt);
-            }
-
-            return Ok(new Appointment());
+            return Ok(oldAppt);
 
         }
 
         [HttpPost("{Id?}/RemoveItem")]
-        public ActionResult<Item> DeleteItem(Guid Id, [FromBody] Guid itemId)
+        public async Task<ActionResult<Item>> DeleteItem(Guid Id, [FromBody] Guid itemId)
         {
-            var ListToEdit = DataContext.Lists.FirstOrDefault(List => List.Id.Equals(Id));
-
-            if (itemId == Guid.Empty)
+            if (itemId == Guid.Empty || Id == Guid.Empty)
             {
                 return BadRequest();
             }
-            else
+            var itemToRemove = await new TaskListsEC(db).RemoveItem(itemId);
+            if (itemToRemove == null)
             {
-                var itemToRemove = ListToEdit.list.FirstOrDefault(i => i.Id.Equals(itemId));
-                ListToEdit.list.Remove(itemToRemove);
-                return Ok(itemToRemove);
+                return BadRequest();
             }
+            return Ok(itemToRemove);
 
         }
 
         [HttpGet("Search/{query?}")]
         public ActionResult<List<Item>> Search(string query)
         {
-            List<Item> results = new List<Item>();
-            foreach (NamedList<Item> namedlist in DataContext.Lists)
+            if (query is null)
             {
-                results.AddRange((from Item in namedlist.list
-                                          where Item.Name.Contains(query, StringComparison.InvariantCultureIgnoreCase) || Item.Description.Contains(query, StringComparison.InvariantCultureIgnoreCase)
-                                          select Item).ToList());
-
-                var appointments = from Item in namedlist.list where (Item is Appointment && !results.Contains(Item)) select Item;
-                //select those Items which are appointments and not already in the list
-
-                foreach (Appointment appointment in appointments)
-                {
-                    if ((from atendee in appointment.Atendees where atendee.Contains(query, StringComparison.InvariantCultureIgnoreCase) select atendee).Any())
-                        results.Add(appointment);
-                    //add those appointments where atendees list contains query string
-                }
+                return BadRequest();
             }
+            var results = new TaskListsEC(db).Search(query);
+            
             var json = JsonConvert.SerializeObject(results, new JsonSerializerSettings
             {
                 TypeNameHandling = TypeNameHandling.Auto

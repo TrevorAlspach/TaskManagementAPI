@@ -1,5 +1,5 @@
 ﻿using Library.TaskManagement;
-using Library.TaskManagement.TaskManagementDTO;
+using Library.TaskManagement.TaskManagementDB;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -29,15 +29,16 @@ namespace Library.TaskManagement
             Id = Guid.NewGuid();
         }
 
-        public Appointment(AppointmentDTO appointmentDTO)
+        public Appointment(AppointmentDB appointmentDB)
         {
-            IsCompleted = appointmentDTO.IsCompleted;
-            Priority = appointmentDTO.Priority;
-            Name = appointmentDTO.Name;
-            Description = appointmentDTO.Description;
-            StartTime = appointmentDTO.StartTime;
-            EndTime = appointmentDTO.EndTime;
-            Atendees = appointmentDTO.atendees;
+            IsCompleted = appointmentDB.IsCompleted;
+            Priority = appointmentDB.Priority;
+            Name = appointmentDB.Name;
+            Description = appointmentDB.Description;
+            StartTime = appointmentDB.StartTime;
+            EndTime = appointmentDB.EndTime;
+            Id = appointmentDB.Id;
+            Atendees = new List<string>();
         }
 
         public Appointment() 

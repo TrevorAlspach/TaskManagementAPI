@@ -1,4 +1,4 @@
-﻿using Library.TaskManagement.TaskManagementDTO;
+﻿using Library.TaskManagement.TaskManagementDB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,13 +23,14 @@ namespace Library.TaskManagement
             Id = Guid.NewGuid();
         }
 
-        public Task(TaskDTO taskDTO)
+        public Task(TaskDB taskDB)
         {
-            Name = taskDTO.Name;
-            Description = taskDTO.Description;
-            DeadlineDate = taskDTO.Deadline;
-            IsCompleted = taskDTO.IsCompleted;
-            Priority = taskDTO.Priority;
+            Name = taskDB.Name;
+            Description = taskDB.Description;
+            DeadlineDate = taskDB.Deadline;
+            IsCompleted = taskDB.IsCompleted;
+            Priority = taskDB.Priority;
+            Id = taskDB.Id;
         }
 
         public Task() { }

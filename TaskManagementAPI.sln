@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskManagementAPI", "TaskMa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.TaskManagement", "Library.4930.TaskManagement\Library.TaskManagement.csproj", "{A93599B5-B159-417B-86F1-A0514DBC0BB0}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TaskManagementSQLServer", "TaskManagementSQLServer\TaskManagementSQLServer.sqlproj", "{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,36 @@ Global
 		{A93599B5-B159-417B-86F1-A0514DBC0BB0}.Release|x64.Build.0 = Release|Any CPU
 		{A93599B5-B159-417B-86F1-A0514DBC0BB0}.Release|x86.ActiveCfg = Release|Any CPU
 		{A93599B5-B159-417B-86F1-A0514DBC0BB0}.Release|x86.Build.0 = Release|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Debug|ARM.Build.0 = Debug|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Debug|ARM.Deploy.0 = Debug|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Debug|ARM64.Deploy.0 = Debug|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Debug|x64.Build.0 = Debug|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Debug|x64.Deploy.0 = Debug|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Debug|x86.Build.0 = Debug|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Debug|x86.Deploy.0 = Debug|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Release|ARM.ActiveCfg = Release|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Release|ARM.Build.0 = Release|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Release|ARM.Deploy.0 = Release|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Release|ARM64.Build.0 = Release|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Release|ARM64.Deploy.0 = Release|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Release|x64.ActiveCfg = Release|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Release|x64.Build.0 = Release|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Release|x64.Deploy.0 = Release|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Release|x86.ActiveCfg = Release|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Release|x86.Build.0 = Release|Any CPU
+		{A26DB0ED-A7DD-4FF4-9F60-E04CF6886EEB}.Release|x86.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,4 @@
 ﻿using Library.TaskManagement;
-using Library.TaskManagement;
-using Library.TaskManagement.TaskManagementDTO;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
