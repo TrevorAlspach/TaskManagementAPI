@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library.TaskManagement.TaskManagementDB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,6 +34,13 @@ namespace Library.TaskManagement
             this.list = new List<T>(namedList.list);
             this.name = name;
             Id = namedList.Id;
+        }
+
+        public NamedList(NamedListDB namedListDB)
+        {
+            this.name = namedListDB.name;
+            this.Id = namedListDB.Id;
+            list = null;
         }
 
         public NamedList() 

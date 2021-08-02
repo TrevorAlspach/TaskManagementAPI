@@ -1,25 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\trevo\\source\\repos\\TaskManagementAPI\\TaskManagementAPI\\TaskManagementAPI.csproj": {}
+    "C:\\Users\\trevo\\Desktop\\Assignment4 and5 CIS4930\\Assignment4 +5 CIS4930\\TaskManagementAPI\\TaskManagementAPI\\TaskManagementAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\trevo\\source\\repos\\TaskManagementAPI\\Library.4930.TaskManagement\\Library.TaskManagement.csproj": {
+    "C:\\Users\\trevo\\Desktop\\Assignment4 and5 CIS4930\\Assignment4 +5 CIS4930\\TaskManagementAPI\\Library.4930.TaskManagement\\Library.TaskManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\trevo\\source\\repos\\TaskManagementAPI\\Library.4930.TaskManagement\\Library.TaskManagement.csproj",
+        "projectUniqueName": "C:\\Users\\trevo\\Desktop\\Assignment4 and5 CIS4930\\Assignment4 +5 CIS4930\\TaskManagementAPI\\Library.4930.TaskManagement\\Library.TaskManagement.csproj",
         "projectName": "Library.TaskManagement",
-        "projectPath": "C:\\Users\\trevo\\source\\repos\\TaskManagementAPI\\Library.4930.TaskManagement\\Library.TaskManagement.csproj",
+        "projectPath": "C:\\Users\\trevo\\Desktop\\Assignment4 and5 CIS4930\\Assignment4 +5 CIS4930\\TaskManagementAPI\\Library.4930.TaskManagement\\Library.TaskManagement.csproj",
         "packagesPath": "C:\\Users\\trevo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\trevo\\source\\repos\\TaskManagementAPI\\Library.4930.TaskManagement\\obj\\",
+        "outputPath": "C:\\Users\\trevo\\Desktop\\Assignment4 and5 CIS4930\\Assignment4 +5 CIS4930\\TaskManagementAPI\\Library.4930.TaskManagement\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\trevo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
@@ -30,6 +30,7 @@
         },
         "frameworks": {
           "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
             "projectReferences": {}
           }
         },
@@ -41,6 +42,7 @@
       },
       "frameworks": {
         "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
@@ -67,26 +69,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\trevo\\source\\repos\\TaskManagementAPI\\TaskManagementAPI\\TaskManagementAPI.csproj": {
+    "C:\\Users\\trevo\\Desktop\\Assignment4 and5 CIS4930\\Assignment4 +5 CIS4930\\TaskManagementAPI\\TaskManagementAPI\\TaskManagementAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\trevo\\source\\repos\\TaskManagementAPI\\TaskManagementAPI\\TaskManagementAPI.csproj",
+        "projectUniqueName": "C:\\Users\\trevo\\Desktop\\Assignment4 and5 CIS4930\\Assignment4 +5 CIS4930\\TaskManagementAPI\\TaskManagementAPI\\TaskManagementAPI.csproj",
         "projectName": "TaskManagementAPI",
-        "projectPath": "C:\\Users\\trevo\\source\\repos\\TaskManagementAPI\\TaskManagementAPI\\TaskManagementAPI.csproj",
+        "projectPath": "C:\\Users\\trevo\\Desktop\\Assignment4 and5 CIS4930\\Assignment4 +5 CIS4930\\TaskManagementAPI\\TaskManagementAPI\\TaskManagementAPI.csproj",
         "packagesPath": "C:\\Users\\trevo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\trevo\\source\\repos\\TaskManagementAPI\\TaskManagementAPI\\obj\\",
+        "outputPath": "C:\\Users\\trevo\\Desktop\\Assignment4 and5 CIS4930\\Assignment4 +5 CIS4930\\TaskManagementAPI\\TaskManagementAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\trevo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -97,9 +99,10 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\trevo\\source\\repos\\TaskManagementAPI\\Library.4930.TaskManagement\\Library.TaskManagement.csproj": {
-                "projectPath": "C:\\Users\\trevo\\source\\repos\\TaskManagementAPI\\Library.4930.TaskManagement\\Library.TaskManagement.csproj"
+              "C:\\Users\\trevo\\Desktop\\Assignment4 and5 CIS4930\\Assignment4 +5 CIS4930\\TaskManagementAPI\\Library.4930.TaskManagement\\Library.TaskManagement.csproj": {
+                "projectPath": "C:\\Users\\trevo\\Desktop\\Assignment4 and5 CIS4930\\Assignment4 +5 CIS4930\\TaskManagementAPI\\Library.4930.TaskManagement\\Library.TaskManagement.csproj"
               }
             }
           }
@@ -112,10 +115,21 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
               "version": "[3.1.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.3, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -140,7 +154,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

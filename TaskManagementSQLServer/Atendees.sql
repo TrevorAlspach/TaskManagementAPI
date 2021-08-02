@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Atendees]
+(
+	[Id] INT NOT NULL PRIMARY KEY,
+	[ItemId] INT NOT NULL,
+	[Name] VARCHAR(20) NOT NULL,
+)
